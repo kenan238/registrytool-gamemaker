@@ -1,50 +1,11 @@
-\# RegistryTool
+# RegistryTool
+A registry manipulation extension for GameMaker, limited to `HKEY_CURRENT_USER` for security reasons.
 
-
-
-A registry manipulation extension for GameMaker, strictly limited to `HKEY\_CURRENT\_USER` for security reasons.
-
-
-
-\## Functions
-
-
-
-\### Key Management
-
-
-
-\* \*\*`reg\_key\_open(path: string)`\*\*
-
-Opens a registry key at the specified path. Returns an internal key handle (`double`), not the native Windows handle.
-
-\* \*\*`reg\_key\_exists(keyId: number)`\*\*
-
-Returns `1` if the key handle is valid and exists, `0` if it does not.
-
-\* \*\*`reg\_key\_free(keyId: number)`\*\*
-
-Frees the key handle and closes it. Returns `1` for success, `0` for failure.
-
-
-
-\### Data Operations
-
-
-
-\* \*\*`reg\_key\_write\_string(keyId: number, valueName: string, value: string)`\*\*
-
-Writes a string to the specified value name. Returns `1` for success, `0` for failure.
-
-\* \*\*`reg\_key\_write\_double(keyId: number, valueName: string, value: number)`\*\*
-
-Writes a number (double) to the specified value name. Returns `1` for success, `0` for failure.
-
-\* \*\*`reg\_key\_read\_string(keyId: number, valueName: string)`\*\*
-
-Reads and returns a string from the specified value name. Returns `""` on failure.
-
-\* \*\*`reg\_key\_read\_double(keyId: number, valueName: string)`\*\*
-
-Reads and returns a double from the specified value name. Returns `0` on failure.
-
+# Functions
+`reg_key_open(path: string)`: returns the key's handle as a `double`, not the actual Windows handle.
+`reg_key_free(keyId: number)`: frees the key handle and closes it (returns 1 for success, 0 for failure).
+`reg_key_exists(keyId: number)`: returns 1 if exists, 0 if it doesn't.
+`reg_key_write_string(keyId: number, valueName: string, value: string)`: writes a string to that value at that key (returns 1 for success, 0 for failure).
+`reg_key_write_double(keyId: number, valueName: string, value: number)`: writes a number (double) to that value at that key (returns 1 for success, 0 for failure).
+`reg_key_read_string(keyId: number, valueName: string)`: reads a string from that value at that key and returns it (returns 1 for success, 0 for failure).
+`reg_key_read_double(keyId: number, valueName: string)`: reads a double from that value at that key and returns it (returns 1 for success, 0 for failure).
