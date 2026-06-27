@@ -2,6 +2,13 @@
 
 A registry manipulation extension for GameMaker, strictly limited to `HKEY_CURRENT_USER` for security reasons.
 
+## Important Note on Paths
+
+Paths should **not** include the `Computer\` or `HKEY_CURRENT_USER\` prefixes. All paths are automatically relative to `HKEY_CURRENT_USER` (mentioned above).
+
+* ❌ **Incorrect:** `Computer\HKEY_CURRENT_USER\Software\MyGame`
+* ✅ **Correct:** `Software\MyGame`
+
 ## Functions
 
 ### Key Management
