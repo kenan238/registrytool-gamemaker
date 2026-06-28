@@ -27,6 +27,6 @@ Writes a string to the specified value name. Returns `1` for success, `0` for fa
 * **`reg_key_write_double(keyId: number, valueName: string, value: number)`**
 Writes a number (double) to the specified value name. Returns `1` for success, `0` for failure.
 * **`reg_key_read_string(keyId: number, valueName: string)`**
-Reads and returns a string from the specified value name. Returns `0` on failure.
+Reads and returns a string from the specified value name. Returns `""` on failure.
 * **`reg_key_read_double(keyId: number, valueName: string)`**
 Reads and returns a double from the specified value name. Returns `0` on failure.
